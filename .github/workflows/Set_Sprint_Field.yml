@@ -1,0 +1,29 @@
+name: Use Reusable Workflow
+
+on:
+  issues:
+    types: [edited]
+
+jobs:
+  get-project-id:
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-item-id.yaml@project_automation_components
+    secrets: inherit
+    with:
+      PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
+      ITEM_NODE_ID: "${{ github.event.issue.node_id }}"
+
+  test-output:
+    runs-on: ubuntu-latest
+    needs: get-project-id
+    steps:
+      - run: echo ${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}
+
+  update-sprint:
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project_automation_components
+    needs: get-project-id
+    with:
+      PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
+      ITERATION_FIELD_ID: "PVTIF_lAHOBjnxfs4AEt2hzgL0kXY"
+      ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
+      UPDATE_ITEM: true
+    secrets: inherit
