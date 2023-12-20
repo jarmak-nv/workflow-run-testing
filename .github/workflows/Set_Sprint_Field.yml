@@ -20,4 +20,5 @@ jobs:
       ITERATION_FIELD_ID: "PVTIF_lAHOBjnxfs4AEt2hzgL0kXY"
       ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
       UPDATE_ITEM: true
+      UPDATE_LINKED_ISSUES: true
     secrets: inherit
