@@ -3,6 +3,8 @@ name: Use Reusable Workflow
 on:
   issues:
     types: [edited]
+  pull_request:
+    types: [edited]
 
 jobs:
   get-project-id:
