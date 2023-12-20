@@ -12,7 +12,7 @@ jobs:
     secrets: inherit
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
-      ITEM_NODE_ID: "${{ github.event.issue.node_id }}"
+      ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
 
   update-sprint:
     uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project-automation-components
