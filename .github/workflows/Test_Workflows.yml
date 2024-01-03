@@ -33,6 +33,7 @@ jobs:
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       SINGLE_SELECT_FIELD_ID: "PVTSSF_lAHOBjnxfs4AEt2hzgCt50s"
+      SINGLE_SELECT_FIELD_NAME: "Status"
       SINGLE_SELECT_OPTION_VALUE: "In Progress"
       ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
