@@ -28,7 +28,7 @@ jobs:
     secrets: inherit
 
   update-status:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@project-automation-components
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
