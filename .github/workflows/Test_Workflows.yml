@@ -41,12 +41,11 @@ jobs:
     secrets: inherit
 
   update-text-field:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@project-automation-components
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       FIELD_ID: "PVTF_lAHOBjnxfs4AEt2hzgMj-zY"
-      FIELD_NAME: "Status"
       FIELD_TYPE: "text"
       SET_VALUE: "Reusable test successful."
       ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
