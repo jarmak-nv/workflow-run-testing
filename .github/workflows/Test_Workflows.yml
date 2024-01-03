@@ -14,32 +14,32 @@ jobs:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
 
-  update-sprint:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project-automation-components
-    needs: get-project-id
-    with:
-      PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
-      ITERATION_FIELD_ID: "PVTIF_lAHOBjnxfs4AEt2hzgL0kXY"
-      ITERATION_FIELD_NAME: "Sprint"
-      ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
-      ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
-      UPDATE_ITEM: true
-      UPDATE_LINKED_ISSUES: true
-    secrets: inherit
+  # update-sprint:
+  #   uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project-automation-components
+  #   needs: get-project-id
+  #   with:
+  #     PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
+  #     ITERATION_FIELD_ID: "PVTIF_lAHOBjnxfs4AEt2hzgL0kXY"
+  #     ITERATION_FIELD_NAME: "Sprint"
+  #     ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
+  #     ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
+  #     UPDATE_ITEM: true
+  #     UPDATE_LINKED_ISSUES: true
+  #   secrets: inherit
 
-  update-status:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@project-automation-components
-    needs: get-project-id
-    with:
-      PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
-      SINGLE_SELECT_FIELD_ID: "PVTSSF_lAHOBjnxfs4AEt2hzgCt50s"
-      SINGLE_SELECT_FIELD_NAME: "Status"
-      SINGLE_SELECT_OPTION_VALUE: "In Progress"
-      ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
-      ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
-      UPDATE_ITEM: true
-      UPDATE_LINKED_ISSUES: true
-    secrets: inherit
+  # update-status:
+  #   uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@project-automation-components
+  #   needs: get-project-id
+  #   with:
+  #     PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
+  #     SINGLE_SELECT_FIELD_ID: "PVTSSF_lAHOBjnxfs4AEt2hzgCt50s"
+  #     SINGLE_SELECT_FIELD_NAME: "Status"
+  #     SINGLE_SELECT_OPTION_VALUE: "In Progress"
+  #     ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
+  #     ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
+  #     UPDATE_ITEM: true
+  #     UPDATE_LINKED_ISSUES: true
+  #   secrets: inherit
 
   update-text-field:
     uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@project-automation-components
@@ -47,7 +47,7 @@ jobs:
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       FIELD_ID: "PVTF_lAHOBjnxfs4AEt2hzgMj-zY"
-      FIELD_TYPE: "text"
+      FIELD_TYPE: text
       SET_VALUE: "Reusable test successful."
       ITEM_PROJECT_ID: "${{ needs.get-project-id.outputs.ITEM_PROJECT_ID }}"
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
