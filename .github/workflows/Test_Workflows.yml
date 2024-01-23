@@ -10,6 +10,8 @@ jobs:
   get-project-id:
     uses: jarmak-nv/shared-workflows/.github/workflows/project-get-item-id.yaml@project-automation-components
     secrets: inherit
+    permissions:
+      contents: read
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
