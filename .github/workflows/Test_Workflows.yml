@@ -12,7 +12,7 @@ jobs:
     secrets: inherit
     permissions:
       contents: read
-      pull_request: read
+      issues: read
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
