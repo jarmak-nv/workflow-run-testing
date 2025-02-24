@@ -8,7 +8,7 @@ on:
 
 jobs:
   get-project-id:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-item-id.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-item-id.yaml@shared-workflow-testing
     secrets: inherit
     permissions:
       contents: read
@@ -17,7 +17,7 @@ jobs:
       ITEM_NODE_ID: "${{ github.event.pull_request.node_id }}"
 
   update-sprint:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-iteration-field.yaml@shared-workflow-testing
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
@@ -30,7 +30,7 @@ jobs:
     secrets: inherit
 
   update-status:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-get-set-single-select-field.yaml@shared-workflow-testing
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
@@ -44,7 +44,7 @@ jobs:
     secrets: inherit
 
   update-text-field:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@shared-workflow-testing
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
@@ -57,7 +57,7 @@ jobs:
     secrets: inherit
 
   update-date-field:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@shared-workflow-testing
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
@@ -70,7 +70,7 @@ jobs:
     secrets: inherit
 
   update-number-field:
-    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@project-automation-components
+    uses: jarmak-nv/shared-workflows/.github/workflows/project-set-text-date-numeric-field.yaml@shared-workflow-testing
     needs: get-project-id
     with:
       PROJECT_ID: "PVT_kwHOBjnxfs4AEt2h"
